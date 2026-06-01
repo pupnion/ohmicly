@@ -3,13 +3,14 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Zap, ChevronDown, AlertTriangle, Wrench } from "lucide-react";
+import { Menu, X, Zap, ChevronDown, Wrench } from "lucide-react";
 import { cn } from "@/lib/utils";
+import UserMenu from "@/components/auth/UserMenu";
 
 const navLinks = [
-  { label: "হোম", href: "/" },
+  { label: "Home", href: "/" },
   {
-    label: "টুলস",
+    label: "Tools",
     href: "/tools",
     children: [
       { label: "RSC Checklist", href: "/tools/rsc-checklist" },
@@ -20,7 +21,7 @@ const navLinks = [
     ],
   },
   {
-    label: "স্ট্যান্ডার্ড",
+    label: "Standards",
     href: "/standards",
     children: [
       { label: "BNBC 2020", href: "/standards/bnbc-2020" },
@@ -29,9 +30,10 @@ const navLinks = [
     ],
   },
   { label: "MCQ", href: "/mcq" },
-  { label: "ব্লগ", href: "/blog" },
-  { label: "ফোরাম", href: "/forum" },
-  { label: "সম্পর্কে", href: "/about" },
+  { label: "Blog", href: "/blog" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Forum", href: "/forum" },
+  { label: "About", href: "/about" },
 ];
 
 export default function Navbar() {
@@ -67,22 +69,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Audit Alert Banner */}
-      <div className="bg-brand-red text-white text-center py-2 px-4 text-sm font-bn">
-        <div className="max-w-7xl mx-auto flex items-center justify-center gap-2">
-          <AlertTriangle className="h-4 w-4 shrink-0" />
-          <span>
-            আপনার ফ্যাক্টরির ইলেকট্রিক্যাল অডিট কি আপডেট?{" "}
-            <Link
-              href="/tools"
-              className="underline font-semibold hover:text-white/80 transition-colors"
-            >
-              এখনই চেক করুন
-            </Link>
-          </span>
-        </div>
-      </div>
-
       {/* Navbar */}
       <nav
         className={cn(
@@ -155,14 +141,16 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* CTA Button + Mobile Toggle */}
+            {/* Auth + CTA + Mobile Toggle */}
             <div className="flex items-center gap-3">
+              <UserMenu />
+
               <Link
                 href="/tools"
                 className="hidden md:inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-semibold text-sm px-4 py-2 rounded-lg hover:bg-yellow-400 transition-colors font-bn"
               >
                 <Wrench className="h-4 w-4" />
-                ফ্রি টুলস
+                Free Tools
               </Link>
 
               <button
@@ -241,14 +229,18 @@ export default function Navbar() {
               </div>
             ))}
 
-            {/* Mobile CTA */}
+            {/* Mobile Auth + CTA */}
+            <div className="md:hidden pt-2">
+              <UserMenu />
+            </div>
+
             <Link
               href="/tools"
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-center gap-2 bg-brand-gold text-brand-navy font-semibold text-sm px-4 py-2.5 rounded-lg mt-3 font-bn"
             >
               <Wrench className="h-4 w-4" />
-              ফ্রি টুলস
+              Free Tools
             </Link>
           </div>
         </div>

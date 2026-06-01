@@ -16,14 +16,15 @@ const footerLinks = {
     { label: "NFPA 70E Guide", href: "/standards/nfpa-70e" },
     { label: "RSC Fire Manual", href: "/standards/rsc-fire" },
     { label: "MCQ Bank", href: "/mcq" },
-    { label: "ব্লগ", href: "/blog" },
+    { label: "Blog", href: "/blog" },
   ],
   company: [
-    { label: "সম্পর্কে", href: "/about" },
-    { label: "ফোরাম", href: "/forum" },
-    { label: "যোগাযোগ", href: "/contact" },
-    { label: "গোপনীয়তা নীতি", href: "/privacy" },
-    { label: "শর্তাবলী", href: "/terms" },
+    { label: "About", href: "/about" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Forum", href: "/forum" },
+    { label: "Contact", href: "/contact" },
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms", href: "/terms" },
   ],
 };
 
@@ -71,7 +72,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-wrap items-center justify-center gap-3">
             <span className="text-white/50 text-sm font-bn mr-2">
-              আমরা যে স্ট্যান্ডার্ডগুলো কভার করি:
+              Standards we cover:
             </span>
             {standards.map((s) => (
               <span
@@ -98,8 +99,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-white/50 text-sm font-bn leading-relaxed">
-              বাংলাদেশের RMG ফ্যাক্টরি ইলেকট্রিক্যাল ইঞ্জিনিয়ারদের জন্য ফ্রি
-              টুলস, টেমপ্লেট ও স্ট্যান্ডার্ড রেফারেন্স — সম্পূর্ণ বিনামূল্যে।
+              Free tools, templates, and standard references for RMG factory
+              electrical engineers in Bangladesh — completely free.
             </p>
 
             {/* Contact Info */}
@@ -120,7 +121,7 @@ export default function Footer() {
               </a>
               <div className="flex items-start gap-2.5 text-white/50 text-sm">
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
-                <span className="font-bn">গাজীপুর, ঢাকা, বাংলাদেশ</span>
+                <span className="font-bn">Gazipur, Dhaka, Bangladesh</span>
               </div>
             </div>
 
@@ -144,7 +145,7 @@ export default function Footer() {
           {/* Tools */}
           <div>
             <h4 className="text-white font-semibold mb-4 font-bn">
-              জনপ্রিয় টুলস
+              Popular Tools
             </h4>
             <ul className="space-y-2">
               {footerLinks.tools.map((link) => (
@@ -163,7 +164,7 @@ export default function Footer() {
           {/* Resources */}
           <div>
             <h4 className="text-white font-semibold mb-4 font-bn">
-              রিসোর্স
+              Resources
             </h4>
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
@@ -182,7 +183,7 @@ export default function Footer() {
           {/* Company */}
           <div>
             <h4 className="text-white font-semibold mb-4 font-bn">
-              কোম্পানি
+              Company
             </h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
@@ -203,15 +204,16 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="max-w-lg mx-auto text-center">
             <h3 className="text-white font-bold text-lg font-bn mb-2">
-              নিউজলেটার সাবস্ক্রাইব করুন
+              Subscribe to Newsletter
             </h3>
             <p className="text-white/50 text-sm font-bn mb-4">
-              নতুন টুলস, আর্টিকেল ও স্ট্যান্ডার্ড আপডেট সরাসরি ইমেইলে পান।
+              Get new tools, articles, and standard updates directly in your
+              email.
             </p>
             <form className="flex gap-2">
               <input
                 type="email"
-                placeholder="আপনার ইমেইল লিখুন"
+                placeholder="Enter your email"
                 className="flex-1 px-4 py-2.5 rounded-lg bg-white/10 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/50 text-sm font-bn"
               />
               <button
@@ -219,7 +221,7 @@ export default function Footer() {
                 className="bg-brand-gold text-brand-navy font-semibold px-4 py-2.5 rounded-lg hover:bg-yellow-400 transition-colors flex items-center gap-2 font-bn text-sm shrink-0"
               >
                 <SendHorizontal className="h-4 w-4" />
-                সাবস্ক্রাইব
+                Subscribe
               </button>
             </form>
           </div>
@@ -228,20 +230,20 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-white/40 text-sm font-bn">
-            © {new Date().getFullYear()} OhmiclyLearn. সকল অধিকার সংরক্ষিত।
+            &copy; {new Date().getFullYear()} OhmiclyLearn. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-sm">
             <Link
               href="/privacy"
               className="text-white/40 hover:text-white/70 transition-colors font-bn"
             >
-              গোপনীয়তা নীতি
+              Privacy Policy
             </Link>
             <Link
               href="/terms"
               className="text-white/40 hover:text-white/70 transition-colors font-bn"
             >
-              শর্তাবলী
+              Terms
             </Link>
           </div>
         </div>

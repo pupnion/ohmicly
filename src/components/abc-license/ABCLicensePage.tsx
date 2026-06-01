@@ -63,25 +63,25 @@ function AccordionItem({
 const grades = [
   {
     grade: "A",
-    title: "Grade A — উচ্চতর ইলেকট্রিক্যাল",
-    desc: "সর্বোচ্চ ভোল্টেজ level-এ কাজ করার লাইসেন্স। 33kV পর্যন্ত HT ও LT সব কাজ।",
-    voltage: "33kV পর্যন্ত",
+    title: "Grade A — Higher Electrical",
+    desc: "License to work at the highest voltage level. All HT and LT work up to 33kV.",
+    voltage: "Up to 33kV",
     color: "bg-brand-red/10 text-brand-red border-brand-red/20",
     icon: "text-brand-red",
   },
   {
     grade: "B",
-    title: "Grade B — মাঝারি ইলেকট্রিক্যাল",
-    desc: "মাঝারি voltage level-এ কাজের লাইসেন্স। 11kV পর্যন্ত LT ও মাঝারি HT কাজ।",
-    voltage: "11kV পর্যন্ত",
+    title: "Grade B — Medium Electrical",
+    desc: "License for medium voltage level work. LT and medium HT work up to 11kV.",
+    voltage: "Up to 11kV",
     color: "bg-brand-blue/10 text-brand-blue border-brand-blue/20",
     icon: "text-brand-blue",
   },
   {
     grade: "C",
-    title: "Grade C — নিম্ন ইলেকট্রিক্যাল",
-    desc: "নিম্ন voltage level-এ কাজের লাইসেন্স। LT (400V) পর্যন্ত ঘরোয়া ও বাণিজ্যিক কাজ।",
-    voltage: "400V (LT) পর্যন্ত",
+    title: "Grade C — Lower Electrical",
+    desc: "License for low voltage level work. Domestic and commercial work up to LT (400V).",
+    voltage: "Up to 400V (LT)",
     color: "bg-brand-green/10 text-brand-green border-brand-green/20",
     icon: "text-brand-green",
   },
@@ -89,70 +89,70 @@ const grades = [
 
 const applicationSteps = [
   {
-    step: "১",
-    title: "যোগ্যতা যাচাই করুন",
-    desc: "BSc/Diploma in Electrical Engineering + ন্যূনতম ২ বছরের কাজের অভিজ্ঞতা। Grade C-এর জন্য ITI + ৫ বছর অভিজ্ঞতা।",
+    step: "1",
+    title: "Check Eligibility",
+    desc: "BSc/Diploma in Electrical Engineering + minimum 2 years of work experience. For Grade C: ITI + 5 years experience.",
   },
   {
-    step: "২",
-    title: "আবেদন ফরম সংগ্রহ করুন",
-    desc: "Chief Inspector of Factories (CIF) অফিস থেকে বা online download করুন। সঠিকভাবে পূরণ করুন।",
+    step: "2",
+    title: "Collect Application Form",
+    desc: "Get it from the Chief Inspector of Factories (CIF) office or download online. Fill it out correctly.",
   },
   {
-    step: "৩",
-    title: "প্রয়োজনীয় কাগজপত্র সংগ্রহ",
-    desc: "সব কাগজপত্র attested কপি সহ প্রস্তুত করুন। নিচে বিস্তারিত তালিকা আছে।",
+    step: "3",
+    title: "Gather Required Documents",
+    desc: "Prepare all documents with attested copies. See the detailed list below.",
   },
   {
-    step: "৪",
-    title: "আবেদন জমা দিন",
-    desc: "CIF অফিসে আবেদন ফরম ও কাগজপত্র জমা দিন। ফি জমা দিন (Grade অনুযায়ী)।",
+    step: "4",
+    title: "Submit Application",
+    desc: "Submit the application form and documents at the CIF office. Pay the fee (according to Grade).",
   },
   {
-    step: "৫",
-    title: "লিখিত ও মৌখিক পরীক্ষা দিন",
-    desc: "লিখিত পরীক্ষায় MCQ ও descriptive। পাশ করলে মৌখিক পরীক্ষা (viva) হবে।",
+    step: "5",
+    title: "Take Written and Oral Exam",
+    desc: "Written exam includes MCQ and descriptive. If you pass, there will be an oral exam (viva).",
   },
   {
-    step: "৬",
-    title: "লাইসেন্স গ্রহণ",
-    desc: "সব পরীক্ষায় উত্তীর্ণ হলে ABC License পাবেন। ৩ বছর পর নবায়ন করতে হবে।",
+    step: "6",
+    title: "Receive License",
+    desc: "After passing all exams, you will receive the ABC License. Must be renewed after 3 years.",
   },
 ];
 
 const documents = [
-  "আবেদন ফরম (সঠিকভাবে পূরিত)",
-  "শিক্ষাগত যোগ্যতার সার্টিফিকেট (BSc/Diploma/ITI — attested)",
-  "কাজের অভিজ্ঞতার সার্টিফিকেট (সংস্থার লেটারহেডে)",
-  "জাতীয় পরিচয়পত্রের কপি (NID)",
-  "পাসপোর্ট সাইজের ৪ কপি ছবি (সাদা পটভূমি)",
-  "স্বাস্থ্য সনদ (Medical Certificate)",
-  "চারিত্রিক সনদ (Character Certificate)",
-  "ফি প্রদানের রসিদ (Treasury Challan)",
-  "পূর্ববর্তী লাইসেন্সের কপি (নবায়নের ক্ষেত্রে)",
-  "কর্মস্থলের প্রতিষ্ঠানের ট্রেড লাইসেন্স কপি",
+  "Application form (correctly filled)",
+  "Educational qualification certificate (BSc/Diploma/ITI — attested)",
+  "Work experience certificate (on company letterhead)",
+  "National ID card copy (NID)",
+  "4 passport-size photos (white background)",
+  "Medical Certificate",
+  "Character Certificate",
+  "Fee payment receipt (Treasury Challan)",
+  "Copy of previous license (for renewal)",
+  "Trade license of the workplace institution",
 ];
 
 const faqs = [
   {
-    q: "ABC License ছাড়া ইলেকট্রিক্যাল কাজ করা যায়?",
-    a: "না। বাংলাদেশে ইলেকট্রিক্যাল কাজ করতে ABC License বাধ্যতামূলক। ছাড়া কাজ করলে আইনানুগ ব্যবস্থা নেওয়া হতে পারে।",
+    q: "Can I do electrical work without an ABC License?",
+    a: "No. ABC License is mandatory for electrical work in Bangladesh. Working without one may result in legal action.",
   },
   {
-    q: "কত সময়ে লাইসেন্স পাওয়া যায়?",
-    a: "আবেদন জমা দেওয়ার পর সাধারণত ৩-৬ মাস সময় লাগে। পরীক্ষার সময়সূচী CIF অফিস থেকে জানানো হয়।",
+    q: "How long does it take to get the license?",
+    a: "Usually 3-6 months after submitting the application. The exam schedule is communicated from the CIF office.",
   },
   {
-    q: "Grade A, B, C — কোনটা দরকার?",
-    a: "আপনার কাজের উপর নির্ভর করে। LT (400V) কাজে C, 11kV পর্যন্ত B, 33kV পর্যন্ত A দরকার। সাধারণত RMG factory-এ B grade যথেষ্ট।",
+    q: "Which grade do I need — A, B, or C?",
+    a: "It depends on your work. C for LT (400V), B for up to 11kV, A for up to 33kV. Generally B grade is sufficient for RMG factories.",
   },
   {
-    q: "MCQ পরীক্ষায় কোন বিষয় থেকে আসে?",
-    a: "BNBC 2020, NFPA 70E, Electrical Safety Rules, Wiring Regulations (BS 7671), Basic Electrical Theory — এই বিষয়গুলো থেকে MCQ আসে।",
+    q: "What topics are covered in the MCQ exam?",
+    a: "MCQs come from BNBC 2020, NFPA 70E, Electrical Safety Rules, Wiring Regulations (BS 7671), and Basic Electrical Theory.",
   },
   {
-    q: "লাইসেন্স নবায়ন কত সময় পর?",
-    a: "৩ বছর পর নবায়ন করতে হবে। নবায়নের জন্য আলাদা ফি ও আবেদন প্রয়োজন।",
+    q: "How often must the license be renewed?",
+    a: "Must be renewed after 3 years. A separate fee and application is required for renewal.",
   },
 ];
 
@@ -167,16 +167,16 @@ export default function ABCLicensePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-brand-gold/10 text-brand-gold px-4 py-1.5 rounded-full text-sm font-medium font-bn mb-6">
             <Award className="h-4 w-4" />
-            ইলেকট্রিক্যাল লাইসেন্স গাইড
+            Electrical License Guide
           </div>
           <h1 className="text-3xl md:text-5xl font-bold text-white font-bn leading-tight">
-            ABC License করুন
-            <span className="text-brand-gold"> — ধাপে ধাপে গাইড</span>
+            Get Your ABC License
+            <span className="text-brand-gold"> — Step by Step Guide</span>
           </h1>
           <p className="mt-4 text-white/70 font-bn text-lg max-w-2xl mx-auto">
-            বাংলাদেশে ইলেকট্রিক্যাল কাজ করতে ABC License বাধ্যতামূলক। এই
-            পেজে আপনি জানবেন — কিভাবে আবেদন করবেন, কোন কাগজপত্র লাগবে,
-            এবং পরীক্ষায় কিভাবে প্রস্তুতি নেবেন।
+            ABC License is mandatory for electrical work in Bangladesh. On this
+            page you will learn — how to apply, what documents you need,
+            and how to prepare for the exam.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
@@ -184,13 +184,13 @@ export default function ABCLicensePage() {
               className="inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-semibold px-6 py-3 rounded-lg hover:bg-yellow-400 transition-colors font-bn"
             >
               <BookOpen className="h-5 w-5" />
-              MCQ Practice করুন
+              Practice MCQ
             </Link>
             <a
               href="#grades"
               className="inline-flex items-center gap-2 border-2 border-white/20 text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/5 transition-colors font-bn"
             >
-              বিস্তারিত পড়ুন
+              Read More
               <ChevronRight className="h-4 w-4" />
             </a>
           </div>
@@ -202,12 +202,12 @@ export default function ABCLicensePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-brand-navy font-bn">
-              ABC License কি?
+              What is ABC License?
             </h2>
             <p className="mt-3 text-brand-gray font-bn max-w-2xl mx-auto">
-              ABC License হলো বাংলাদেশে ইলেকট্রিক্যাল কাজ করার জন্য
-              সরকারি অনুমোদিত লাইসেন্স। Chief Inspector of Factories (CIF)
-              কর্তৃক প্রদান করা হয়। তিন ধরনের Grade আছে:
+              ABC License is the government-approved license for electrical work
+              in Bangladesh. It is issued by the Chief Inspector of Factories
+              (CIF). There are three grades:
             </p>
           </div>
 
@@ -241,10 +241,10 @@ export default function ABCLicensePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-brand-navy font-bn">
-              আবেদন প্রক্রিয়া — ৬টি ধাপ
+              Application Process — 6 Steps
             </h2>
             <p className="mt-3 text-brand-gray font-bn">
-              ধাপে ধাপে ABC License এর জন্য আবেদন করুন
+              Apply for ABC License step by step
             </p>
           </div>
 
@@ -274,10 +274,10 @@ export default function ABCLicensePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-brand-navy font-bn">
-              প্রয়োজনীয় কাগজপত্র
+              Required Documents
             </h2>
             <p className="mt-3 text-brand-gray font-bn">
-              আবেদনের সাথে নিচের কাগজপত্র জমা দিন
+              Submit the following documents with your application
             </p>
           </div>
 
@@ -309,14 +309,14 @@ export default function ABCLicensePage() {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-brand-gold/10 text-brand-gold px-4 py-1.5 rounded-full text-sm font-medium font-bn mb-6">
             <Zap className="h-4 w-4" />
-            পরীক্ষার প্রস্তুতি
+            Exam Preparation
           </div>
           <h2 className="text-2xl md:text-4xl font-bold text-white font-bn">
-            MCQ Practice করে পরীক্ষার প্রস্তুতি নিন
+            Prepare for the Exam with MCQ Practice
           </h2>
           <p className="mt-4 text-white/70 font-bn text-lg max-w-2xl mx-auto">
-            BNBC 2020, NFPA 70E, Electrical Safety — সব বিষয়ে MCQ Practice
-            করুন। বাংলায় explanation সহ।
+            Practice MCQs on BNBC 2020, NFPA 70E, Electrical Safety — all
+            topics. With explanations.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
@@ -324,13 +324,13 @@ export default function ABCLicensePage() {
               className="inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-semibold px-8 py-3.5 rounded-lg hover:bg-yellow-400 transition-colors font-bn"
             >
               <BookOpen className="h-5 w-5" />
-              MCQ Practice শুরু করুন
+              Start MCQ Practice
             </Link>
             <Link
               href="/tools"
               className="inline-flex items-center gap-2 border-2 border-white/20 text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-white/5 transition-colors font-bn"
             >
-              ফ্রি টুলস দেখুন
+              View Free Tools
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -342,7 +342,7 @@ export default function ABCLicensePage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-brand-navy font-bn">
-              সচরাচর জিজ্ঞাসা
+              Frequently Asked Questions
             </h2>
           </div>
           <div className="space-y-3">

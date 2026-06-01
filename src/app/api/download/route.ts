@@ -4,7 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { toolSlug, userId } = body;
+    const { toolSlug } = body;
 
     if (!toolSlug) {
       return NextResponse.json(
@@ -13,23 +13,36 @@ export async function POST(request: Request) {
       );
     }
 
-    const supabase = createClient();
+    try {
+      const supabase = createClient();
 
-    // Insert download record
-    const { error } = await supabase.from("downloads").insert({
-      tool_slug: toolSlug,
-      user_id: userId || null,
-      downloaded_at: new Date().toISOString(),
-    });
+      // Get tool from database
+      const { data: tool } = await supabase
+        .from("tools")
+        .select("file_url, downloads")
+        .eq("slug", toolSlug)
+        .single();
 
-    if (error) {
-      console.error("Supabase insert error:", error);
-      return NextResponse.json(
-        { success: false, error: "Failed to record download" },
-        { status: 500 }
-      );
+      // Increment download count
+      if (tool) {
+        await supabase
+          .from("tools")
+          .update({ downloads: (tool.downloads || 0) + 1 })
+          .eq("slug", toolSlug);
+
+        // If tool has a file_url (Supabase Storage), use it
+        if (tool.file_url) {
+          return NextResponse.json({
+            success: true,
+            downloadUrl: tool.file_url,
+          });
+        }
+      }
+    } catch {
+      // Supabase not configured, fall through to static file
     }
 
+    // Fallback to static file
     return NextResponse.json({
       success: true,
       downloadUrl: `/downloads/${toolSlug}.xlsx`,

@@ -18,10 +18,10 @@ export default function CTASection() {
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-white font-bn">
-          আজই শুরু করুন — সম্পূর্ণ বিনামূল্যে
+          Start Today — Completely Free
         </h2>
         <p className="mt-4 text-white/70 font-bn text-lg">
-          Registration ছাড়াই সব ফ্রি টুলস ব্যবহার করুন
+          Use all free tools without registration
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -30,14 +30,14 @@ export default function CTASection() {
             className="inline-flex items-center gap-2 bg-brand-gold text-brand-navy font-semibold px-8 py-3.5 rounded-lg hover:bg-yellow-400 transition-colors font-bn"
           >
             <Download className="h-5 w-5" />
-            ফ্রি টুলস ডাউনলোড করুন
+            Download Free Tools
           </Link>
           <Link
             href="/tools/rsc-checklist"
             className="inline-flex items-center gap-2 border-2 border-white/20 text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-white/5 transition-colors font-bn"
           >
             <Shield className="h-5 w-5" />
-            RSC Checklist দেখুন
+            View RSC Checklist
           </Link>
         </div>
       </div>

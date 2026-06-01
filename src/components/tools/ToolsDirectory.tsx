@@ -6,11 +6,11 @@ import { Search, Download, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { tools, iconMap, colorMap } from "@/lib/tools-data";
 
-const categories = ["সব", "Calculator", "Checklist", "Template", "Reference"] as const;
+const categories = ["All", "Calculator", "Checklist", "Template", "Reference"] as const;
 
 export default function ToolsDirectory() {
   const [search, setSearch] = useState("");
-  const [activeCategory, setActiveCategory] = useState<string>("সব");
+  const [activeCategory, setActiveCategory] = useState<string>("All");
 
   const filtered = tools.filter((tool) => {
     const matchesSearch =
@@ -20,7 +20,7 @@ export default function ToolsDirectory() {
       tool.desc.toLowerCase().includes(search.toLowerCase());
 
     const matchesCategory =
-      activeCategory === "সব" || tool.category === activeCategory;
+      activeCategory === "All" || tool.category === activeCategory;
 
     return matchesSearch && matchesCategory;
   });
@@ -31,10 +31,10 @@ export default function ToolsDirectory() {
         {/* Page Header */}
         <div className="text-center mb-10">
           <h1 className="text-3xl md:text-4xl font-bold text-brand-navy font-bn">
-            সব টুলস ও টেমপ্লেট
+            All Tools and Templates
           </h1>
           <p className="mt-3 text-brand-gray font-bn text-lg">
-            BNBC 2020, NFPA 70E, RSC — সব standard reference এক জায়গায়
+            BNBC 2020, NFPA 70E, RSC — all standard references in one place
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function ToolsDirectory() {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-brand-gray" />
             <input
               type="text"
-              placeholder="টুল খুঁজুন... (যেমন: RSC, IR Test, Cable)"
+              placeholder="Search tools... (e.g. RSC, IR Test, Cable)"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none text-sm font-bn transition-colors"
@@ -72,7 +72,7 @@ export default function ToolsDirectory() {
 
         {/* Results Count */}
         <p className="text-sm text-brand-gray font-bn mb-6">
-          {filtered.length}টি টুল পাওয়া গেছে
+          {filtered.length} tools found
         </p>
 
         {/* Tools Grid */}
@@ -97,12 +97,12 @@ export default function ToolsDirectory() {
                       {tool.isPopular && (
                         <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full bg-brand-gold/10 text-brand-gold font-bn">
                           <Star className="h-3 w-3" />
-                          সবচেয়ে জনপ্রিয়
+                          Most Popular
                         </span>
                       )}
                       {tool.isFree && (
                         <span className="text-xs font-medium px-2 py-1 rounded-full bg-brand-green/10 text-brand-green font-bn">
-                          ফ্রি
+                          Free
                         </span>
                       )}
                     </div>
@@ -129,11 +129,11 @@ export default function ToolsDirectory() {
                   {/* Footer */}
                   <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
                     <span className="text-xs text-brand-gray font-bn">
-                      {new Intl.NumberFormat("en-US").format(tool.downloads)} ডাউনলোড
+                      {new Intl.NumberFormat("en-US").format(tool.downloads)} downloads
                     </span>
                     <span className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-blue font-bn group-hover:gap-2.5 transition-all">
                       <Download className="h-4 w-4" />
-                      ডাউনলোড করুন
+                      Download
                     </span>
                   </div>
                 </Link>
@@ -144,10 +144,10 @@ export default function ToolsDirectory() {
           <div className="text-center py-20">
             <Search className="h-12 w-12 text-brand-gray/40 mx-auto mb-4" />
             <p className="text-brand-gray font-bn text-lg">
-              কোনো টুল পাওয়া যায়নি
+              No tools found
             </p>
             <p className="text-brand-gray/60 font-bn text-sm mt-1">
-              অন্য keyword দিয়ে আবার চেষ্টা করুন
+              Try a different keyword
             </p>
           </div>
         )}

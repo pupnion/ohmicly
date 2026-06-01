@@ -5,28 +5,28 @@ const audiences = [
   {
     icon: Building2,
     title: "RMG Factory Electrical Manager/Supervisor",
-    desc: "RSC, NIRAPON, ACCORD audit-এর জন্য প্রস্তুতি নিন",
+    desc: "Prepare for RSC, NIRAPON, ACCORD audits",
     color: "text-brand-blue",
     bg: "bg-brand-blue/10",
   },
   {
     icon: GraduationCap,
-    title: "BSc ও Diploma Electrical Engineer",
+    title: "BSc and Diploma Electrical Engineers",
     desc: "BNBC 2020, NFPA, IEC standard reference tools",
     color: "text-brand-green",
     bg: "bg-brand-green/10",
   },
   {
     icon: Award,
-    title: "ABC License প্রার্থী",
-    desc: "MCQ practice, আবেদন গাইড, syllabus",
+    title: "ABC License Candidates",
+    desc: "MCQ practice, application guide, syllabus",
     color: "text-brand-gold",
     bg: "bg-brand-gold/10",
   },
   {
     icon: Wrench,
-    title: "Factory Electrician ও Supervisor",
-    desc: "বাংলায় সহজ ভাষায় technical guide",
+    title: "Factory Electricians and Supervisors",
+    desc: "Technical guides in simple language",
     color: "text-brand-purple",
     bg: "bg-brand-purple/10",
   },
@@ -38,7 +38,7 @@ export default function AudienceSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-navy font-bn">
-            কাদের জন্য OhmiclyLearn?
+            Who is OhmiclyLearn for?
           </h2>
         </div>
 

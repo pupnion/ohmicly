@@ -7,7 +7,7 @@ type Props = { params: { slug: string } };
 
 export function generateMetadata({ params }: Props): Metadata {
   const tool = getToolBySlug(params.slug);
-  if (!tool) return { title: "টুল পাওয়া যায়নি — OhmiclyLearn" };
+  if (!tool) return { title: "Tool Not Found — OhmiclyLearn" };
 
   return {
     title: `${tool.title} — ${tool.title_en} | OhmiclyLearn`,

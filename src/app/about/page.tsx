@@ -2,37 +2,37 @@ import type { Metadata } from "next";
 import { Zap, Target, Users, Heart, Award, BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "সম্পর্কে — OhmiclyLearn",
+  title: "About — OhmiclyLearn",
   description:
-    "OhmiclyLearn সম্পর্কে জানুন — বাংলাদেশের RMG ফ্যাক্টরি ইলেকট্রিক্যাল ইঞ্জিনিয়ারদের জন্য ফ্রি টুলস ও রিসোর্স প্ল্যাটফর্ম।",
+    "Learn about OhmiclyLearn — free tools and resources platform for electrical engineers in Bangladesh RMG factories.",
 };
 
 const values = [
   {
     icon: Target,
-    title: "মিশন",
+    title: "Mission",
     description:
-      "বাংলাদেশের RMG ফ্যাক্টরির ইলেকট্রিক্যাল ইঞ্জিনিয়ারদের জন্য BNBC 2020, NFPA 70E, RSC Fire Manual ভিত্তিক ফ্রি টুলস ও রিসোর্স তৈরি করা।",
+      "Create free tools and resources based on BNBC 2020, NFPA 70E, RSC Fire Manual for electrical engineers in Bangladesh RMG factories.",
   },
   {
     icon: Heart,
-    title: "ভিশন",
+    title: "Vision",
     description:
-      "প্রতিটি ইলেকট্রিক্যাল ইঞ্জিনিয়ারের হাতে সঠিক স্ট্যান্ডার্ড রেফারেন্স পৌঁছে দেওয়া — যাতে কোনো ফ্যাক্টরিতে ইলেকট্রিক্যাল দুর্ঘটনা না ঘটে।",
+      "Deliver correct standard references to every electrical engineer — so no factory suffers an electrical accident.",
   },
   {
     icon: Award,
-    title: "মান",
+    title: "Quality",
     description:
-      "প্রতিটি টুল ও কন্টেন্ট আন্তর্জাতিক স্ট্যান্ডার্ড অনুসরণ করে তৈরি করা হয়। আমরা কোয়ালিটির সাথে কোনো আপস করি না।",
+      "Every tool and content is created following international standards. We never compromise on quality.",
   },
 ];
 
 const stats = [
-  { value: "৫+", label: "ফ্রি টুলস" },
-  { value: "৩", label: "স্ট্যান্ডার্ড কভার" },
-  { value: "১০০%", label: "বিনামূল্যে" },
-  { value: "বাংলা", label: "ভাষায়" },
+  { value: "5+", label: "Free Tools" },
+  { value: "3", label: "Standards Covered" },
+  { value: "100%", label: "Free" },
+  { value: "English", label: "Language" },
 ];
 
 export default function AboutPage() {
@@ -41,13 +41,13 @@ export default function AboutPage() {
       <div className="container-main">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="badge-bnbc mb-4 inline-block">আমাদের সম্পর্কে</span>
+          <span className="badge-bnbc mb-4 inline-block">About Us</span>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-800 font-bn mb-4">
-            OhmiclyLearn কী?
+            What is OhmiclyLearn?
           </h1>
           <p className="text-slate-600 font-bn max-w-2xl mx-auto">
-            বাংলাদেশের RMG ফ্যাক্টরির ইলেকট্রিক্যাল ইঞ্জিনিয়ারদের জন্য তৈরি
-            সম্পূর্ণ বিনামূল্যের টুলস ও রিসোর্স প্ল্যাটফর্ম।
+            A completely free tools and resources platform built for electrical
+            engineers in Bangladesh RMG factories.
           </p>
         </div>
 
@@ -58,20 +58,19 @@ export default function AboutPage() {
               <Zap className="h-6 w-6 text-brand-navy" />
             </div>
             <h2 className="text-xl font-bold text-slate-800 font-bn">
-              আমাদের গল্প
+              Our Story
             </h2>
           </div>
           <p className="text-slate-600 font-bn leading-relaxed mb-4">
-            বাংলাদেশের রেডিমেড গার্মেন্টস ইন্ডাস্ট্রিতে হাজার হাজার
-            ইলেকট্রিক্যাল ইঞ্জিনিয়ার কাজ করেন। তারা প্রতিদিন BNBC 2020, NFPA
-            70E, RSC Fire Manual — এই স্ট্যান্ডার্ডগুলোর সাথে কাজ করেন। কিন্তু
-            সঠিক টুলস ও রেফারেন্স খুঁজে পাওয়া সবসময় সহজ হয় না।
+            Thousands of electrical engineers work in Bangladesh&apos;s ready-made
+            garments industry. They work daily with standards like BNBC 2020,
+            NFPA 70E, and RSC Fire Manual. But finding the right tools and
+            references is not always easy.
           </p>
           <p className="text-slate-600 font-bn leading-relaxed">
-            OhmiclyLearn ঠিক সেই সমস্যার সমাধান। আমরা বাংলায় সহজ ভাষায়
-            স্ট্যান্ডার্ড রেফারেন্স, ফ্রি টুলস এবং MCQ প্রশ্নব্যাংক তৈরি
-            করেছি — যাতে প্রতিটি ইঞ্জিনিয়ার দ্রুত এবং সঠিক সিদ্ধান্ত নিতে
-            পারেন।
+            OhmiclyLearn is the solution to that problem. We have created
+            standard references, free tools, and MCQ question banks in simple
+            language — so every engineer can make quick and correct decisions.
           </p>
         </div>
 

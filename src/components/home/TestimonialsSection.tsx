@@ -3,20 +3,20 @@ import { Star, Quote } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "RSC audit-এ আগে অনেক ভয় লাগত। OhmiclyLearn-এর checklist download করে prepare করার পর এবার সব ৪৭টি clause PASS করেছি।",
-    name: "রহিম উদ্দিন",
+      "I used to be very worried about RSC audits. After downloading and preparing with OhmiclyLearn's checklist, I passed all 47 clauses this time.",
+    name: "Rahim Uddin",
     role: "Electrical Manager, Gazipur",
   },
   {
     quote:
-      "IR test report বানাতে আগে ২ ঘণ্টা লাগত। এখন ১০ মিনিটে হয়ে যায়। Kt correction automatic।",
-    name: "সাইফুল ইসলাম",
+      "Making IR test reports used to take 2 hours. Now it takes 10 minutes. Kt correction is automatic.",
+    name: "Saiful Islam",
     role: "Electrical Engineer, Ashulia",
   },
   {
     quote:
-      "ABC License পরীক্ষার জন্য MCQ bank অনেক কাজে লেগেছে। বাংলায় explanation পাওয়া কোথাও ছিল না।",
-    name: "নাজমুল হাসান",
+      "The MCQ bank was very helpful for the ABC License exam. I couldn't find explanations in English anywhere else.",
+    name: "Nazmul Hasan",
     role: "ABC License Holder, Chittagong",
   },
 ];
@@ -27,7 +27,7 @@ export default function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-navy font-bn">
-            ইঞ্জিনিয়ারদের মতামত
+            What Engineers Say
           </h2>
         </div>
 

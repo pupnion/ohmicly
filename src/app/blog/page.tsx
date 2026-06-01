@@ -2,62 +2,62 @@ import type { Metadata } from "next";
 import { Clock, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "ব্লগ — ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং আর্টিকেল | OhmiclyLearn",
+  title: "Blog — Electrical Engineering Articles | OhmiclyLearn",
   description:
-    "BNBC 2020, NFPA 70E, ইলেকট্রিক্যাল সেফটি বিষয়ক আর্টিকেল ও গাইড। বাংলায় পড়ুন।",
+    "Articles and guides on BNBC 2020, NFPA 70E, electrical safety. Read in English.",
 };
 
 const posts = [
   {
-    title: "BNBC 2020 অনুযায়ী আর্থিং সিস্টেম ডিজাইন গাইড",
+    title: "Earthing System Design Guide According to BNBC 2020",
     excerpt:
-      "বাংলাদেশের RMG ফ্যাক্টরিতে আর্থিং সিস্টেম ডিজাইনের সময় BNBC 2020 এর কোন সেকশনগুলো মেনে চলতে হয়? বিস্তারিত জানুন।",
-    date: "২৫ মে, ২০২৬",
+      "Which sections of BNBC 2020 must be followed when designing earthing systems for RMG factories in Bangladesh? Learn in detail.",
+    date: "May 25, 2026",
     category: "BNBC 2020",
     color: "bg-brand-blue",
     slug: "bnbc-2020-earthing-design",
   },
   {
-    title: "আর্ক ফ্ল্যাশ PPE সিলেকশন — NFPA 70E গাইড",
+    title: "Arc Flash PPE Selection — NFPA 70E Guide",
     excerpt:
-      "আর্ক ফ্ল্যাশ হাজার্ড এরিয়ায় কাজ করার সময় সঠিক PPE কীভাবে সিলেক্ট করবেন? NFPA 70E অনুযায়ী পূর্ণ গাইড।",
-    date: "২০ মে, ২০২৬",
+      "How to select the correct PPE when working in arc flash hazard areas? Complete guide according to NFPA 70E.",
+    date: "May 20, 2026",
     category: "NFPA 70E",
     color: "bg-brand-gold",
     slug: "arc-flash-ppe-selection",
   },
   {
-    title: "RMG ফ্যাক্টরিতে ফায়ার অ্যালার্ম সিস্টেম ইনস্টলেশন গাইড",
+    title: "Fire Alarm System Installation Guide for RMG Factories",
     excerpt:
-      "RSC Fire Manual অনুযায়ী ফায়ার অ্যালার্ম সিস্টেম ইনস্টল করার ধাপে ধাপে গাইড।",
-    date: "১৫ মে, ২০২৬",
+      "Step-by-step guide to installing fire alarm system according to RSC Fire Manual.",
+    date: "May 15, 2026",
     category: "RSC Fire",
     color: "bg-brand-red",
     slug: "rmg-fire-alarm-installation",
   },
   {
-    title: "ক্যাবল সাইজিং ক্যালকুলেশন — সহজ পদ্ধতি",
+    title: "Cable Sizing Calculation — Simple Method",
     excerpt:
-      "লোড ক্যালকুলেশন থেকে ক্যাবল সাইজ নির্ধারণ — সম্পূর্ণ প্রসেস বাংলায় জানুন।",
-    date: "১০ মে, ২০২৬",
-    category: "ইলেকট্রিক্যাল",
+      "From load calculation to cable sizing — learn the complete process in simple language.",
+    date: "May 10, 2026",
+    category: "Electrical",
     color: "bg-brand-green",
     slug: "cable-sizing-guide",
   },
   {
-    title: "লাইটনিং প্রোটেকশন সিস্টেম (LPS) — সম্পূর্ণ গাইড",
+    title: "Lightning Protection System (LPS) — Complete Guide",
     excerpt:
-      "BNBC 2020 অনুযায়ী LPS ডিজাইন, ইনস্টলেশন এবং মেইনটেন্যান্স সম্পর্কে সব কিছু জানুন।",
-    date: "৫ মে, ২০২৬",
+      "Everything about LPS design, installation, and maintenance according to BNBC 2020.",
+    date: "May 5, 2026",
     category: "BNBC 2020",
     color: "bg-brand-purple",
     slug: "lps-complete-guide",
   },
   {
-    title: "লকআউট/ট্যাগআউट (LOTO) প্রসিডিউর — NFPA 70E",
+    title: "Lockout/Tagout (LOTO) Procedure — NFPA 70E",
     excerpt:
-      "ইলেকট্রিক্যাল সেফটির জন্য LOTO প্রসিডিউর কেন জরুরি এবং কীভাবে প্রয়োগ করবেন তা জানুন।",
-    date: "১ মে, ২০২৬",
+      "Learn why LOTO procedure is critical for electrical safety and how to apply it.",
+    date: "May 1, 2026",
     category: "NFPA 70E",
     color: "bg-brand-orange",
     slug: "loto-procedure-nfpa-70e",
@@ -70,13 +70,13 @@ export default function BlogPage() {
       <div className="container-main">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="badge-bnbc mb-4 inline-block">ব্লগ</span>
+          <span className="badge-bnbc mb-4 inline-block">Blog</span>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-800 font-bn mb-4">
-            ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং ব্লগ
+            Electrical Engineering Blog
           </h1>
           <p className="text-slate-600 font-bn max-w-2xl mx-auto">
-            BNBC 2020, NFPA 70E, RSC Fire Manual এবং সাধারণ ইলেকট্রিক্যাল
-            ইঞ্জিনিয়ারিং বিষয়ক আর্টিকেল বাংলায় পড়ুন।
+            Read articles on BNBC 2020, NFPA 70E, RSC Fire Manual, and general
+            electrical engineering topics.
           </p>
         </div>
 
@@ -99,7 +99,7 @@ export default function BlogPage() {
               </h2>
               <p className="text-sm text-slate-600 font-bn mb-4">{post.excerpt}</p>
               <div className="flex items-center gap-1 text-brand-blue text-sm font-semibold font-bn group-hover:gap-2 transition-all">
-                পড়ুন <ArrowRight className="h-4 w-4" />
+                Read More <ArrowRight className="h-4 w-4" />
               </div>
             </article>
           ))}

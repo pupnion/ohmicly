@@ -2,38 +2,38 @@ import type { Metadata } from "next";
 import { Mail, MessageSquare, MapPin, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "যোগাযোগ — OhmiclyLearn",
+  title: "Contact — OhmiclyLearn",
   description:
-    "OhmiclyLearn টিমের সাথে যোগাযোগ করুন। প্রশ্ন, পরামর্শ বা সহযোগিতার জন্য আমাদের মেইল করুন।",
+    "Contact the OhmiclyLearn team. Email us for questions, suggestions, or collaboration.",
 };
 
 const contactMethods = [
   {
     icon: Mail,
-    title: "ইমেইল",
+    title: "Email",
     value: "hello@ohmiclylearn.com",
-    description: "যেকোনো প্রশ্ন বা পরামর্শের জন্য ইমেইল করুন",
+    description: "Email us for any question or suggestion",
     color: "bg-brand-blue",
   },
   {
     icon: MessageSquare,
-    title: "ফেসবুক পেজ",
+    title: "Facebook Page",
     value: "fb.com/ohmiclylearn",
-    description: "আমাদের ফেসবুক পেজে মেসেজ করুন",
+    description: "Send us a message on our Facebook page",
     color: "bg-brand-gold",
   },
   {
     icon: MapPin,
-    title: "লোকেশন",
-    value: "ঢাকা, বাংলাদেশ",
-    description: "RMG ইন্ডাস্ট্রি হাব — গাজীপুর, নারায়ণগঞ্জ",
+    title: "Location",
+    value: "Dhaka, Bangladesh",
+    description: "RMG Industry Hub — Gazipur, Narayanganj",
     color: "bg-brand-green",
   },
   {
     icon: Clock,
-    title: "রেসপন্স টাইম",
-    value: "২৪-৪৮ ঘন্টা",
-    description: "সাধারণত ১-২ কর্মদিবসের মধ্যে উত্তর দেওয়া হয়",
+    title: "Response Time",
+    value: "24-48 hours",
+    description: "Usually replied within 1-2 business days",
     color: "bg-brand-purple",
   },
 ];
@@ -44,13 +44,13 @@ export default function ContactPage() {
       <div className="container-main">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="badge-bnbc mb-4 inline-block">যোগাযোগ</span>
+          <span className="badge-bnbc mb-4 inline-block">Contact</span>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-800 font-bn mb-4">
-            আমাদের সাথে যোগাযোগ করুন
+            Contact Us
           </h1>
           <p className="text-slate-600 font-bn max-w-2xl mx-auto">
-            কোনো প্রশ্ন, পরামর্শ বা সহযোগিতার জন্য আমাদের সাথে যোগাযোগ করুন।
-            আমরা শুনতে আগ্রহী!
+            Contact us for any question, suggestion, or collaboration. We would
+            love to hear from you!
           </p>
         </div>
 
@@ -79,23 +79,23 @@ export default function ContactPage() {
         {/* Contact Form */}
         <div className="card p-8 max-w-2xl mx-auto">
           <h2 className="text-xl font-bold text-slate-800 font-bn mb-6">
-            মেসেজ পাঠান
+            Send a Message
           </h2>
           <form className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-slate-700 font-bn mb-1">
-                  নাম
+                  Name
                 </label>
                 <input
                   type="text"
-                  placeholder="আপনার নাম"
+                  placeholder="Your name"
                   className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue font-bn text-sm"
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-700 font-bn mb-1">
-                  ইমেইল
+                  Email
                 </label>
                 <input
                   type="email"
@@ -106,26 +106,26 @@ export default function ContactPage() {
             </div>
             <div>
               <label className="block text-sm font-medium text-slate-700 font-bn mb-1">
-                বিষয়
+                Subject
               </label>
               <input
                 type="text"
-                placeholder="বিষয় লিখুন"
+                placeholder="Enter subject"
                 className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue font-bn text-sm"
               />
             </div>
             <div>
               <label className="block text-sm font-medium text-slate-700 font-bn mb-1">
-                মেসেজ
+                Message
               </label>
               <textarea
                 rows={5}
-                placeholder="আপনার মেসেজ লিখুন..."
+                placeholder="Write your message..."
                 className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue font-bn text-sm resize-none"
               />
             </div>
             <button type="submit" className="btn-primary w-full">
-              মেসেজ পাঠান
+              Send Message
             </button>
           </form>
         </div>

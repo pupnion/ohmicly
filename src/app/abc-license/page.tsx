@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ABCLicensePage from "@/components/abc-license/ABCLicensePage";
 
 export const metadata: Metadata = {
-  title: "ABC License করুন — ধাপে ধাপে গাইড | OhmiclyLearn",
+  title: "Get ABC License — Step by Step Guide | OhmiclyLearn",
   description:
-    "ইলেকট্রিক্যাল ABC License পেতে ধাপে ধাপে গাইড। Grade A, B, C — আবেদন প্রক্রিয়া, প্রয়োজনীয় কাগজপত্র, MCQ Practice।",
+    "Step-by-step guide to get electrical ABC License. Grade A, B, C — application process, required documents, MCQ Practice.",
 };
 
 export default function Page() {

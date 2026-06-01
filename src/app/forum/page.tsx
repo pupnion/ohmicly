@@ -3,50 +3,50 @@ import Link from "next/link";
 import { MessageSquare, Users, Clock, ArrowRight, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "ফোরাম — ইলেকট্রিক্যাল ইঞ্জিনিয়ার কমিউনিটি | OhmiclyLearn",
+  title: "Forum — Electrical Engineer Community | OhmiclyLearn",
   description:
-    "ইলেকট্রিক্যাল ইঞ্জিনিয়ারদের কমিউনিটি ফোরাম। প্রশ্ন করুন, উত্তর দিন, জ্ঞান শেয়ার করুন।",
+    "Community forum for electrical engineers. Ask questions, share answers, and share knowledge.",
 };
 
 const categories = [
   {
     title: "BNBC 2020",
-    description: "বিল্ডিং কোড, ইলেকট্রিক্যাল ইনস্টলেশন, আর্থিং বিষয়ক আলোচনা",
+    description: "Discussion on building code, electrical installation, and earthing",
     threads: 24,
     posts: 89,
     color: "bg-brand-blue",
   },
   {
     title: "NFPA 70E",
-    description: "আর্ক ফ্ল্যাশ, PPE, লকআউট/ট্যাগআউট বিষয়ক আলোচনা",
+    description: "Discussion on arc flash, PPE, and lockout/tagout",
     threads: 18,
     posts: 67,
     color: "bg-brand-gold",
   },
   {
     title: "RSC Fire Manual",
-    description: "ফায়ার সেফটি, স্প্রিংকলার, ফায়ার অ্যালার্ম বিষয়ক আলোচনা",
+    description: "Discussion on fire safety, sprinkler, and fire alarm systems",
     threads: 15,
     posts: 52,
     color: "bg-brand-red",
   },
   {
-    title: "সাধারণ ইলেকট্রিক্যাল",
-    description: "ওয়ারিং, মোটর, ট্রান্সফরমার, প্যানেল — সব বিষয়ে আলোচনা",
+    title: "General Electrical",
+    description: "Discussion on wiring, motor, transformer, panel — all topics",
     threads: 42,
     posts: 156,
     color: "bg-brand-green",
   },
   {
-    title: "ক্যারিয়ার ও চাকরি",
-    description: "চাকরির খবর, ইন্টারভিউ টিপস, ক্যারিয়ার গাইডেন্স",
+    title: "Career and Jobs",
+    description: "Job news, interview tips, career guidance",
     threads: 31,
     posts: 98,
     color: "bg-brand-purple",
   },
   {
-    title: "টুলস ও রিসোর্স",
-    description: "OhmiclyLearn টুলস ব্যবহার, ফিডব্যাক, নতুন ফিচার রিকোয়েস্ট",
+    title: "Tools and Resources",
+    description: "OhmiclyLearn tools usage, feedback, new feature requests",
     threads: 12,
     posts: 45,
     color: "bg-brand-orange",
@@ -55,32 +55,32 @@ const categories = [
 
 const recentThreads = [
   {
-    title: "BNBC 2020 অনুযায়ী আর্থিং রেজিস্ট্যান্স কত হওয়া উচিত?",
-    author: "রাকিব উদ্দিন",
+    title: "What should be the earthing resistance according to BNBC 2020?",
+    author: "Rakib Uddin",
     category: "BNBC 2020",
     replies: 8,
-    time: "২ ঘন্টা আগে",
+    time: "2 hours ago",
   },
   {
-    title: "আর্ক ফ্ল্যাশ PPE ক্যাটাগরি ২ এর জন্য কোন গ্লাভস লাগবে?",
-    author: "তানভীর আহমেদ",
+    title: "Which gloves are needed for Arc Flash PPE Category 2?",
+    author: "Tanvir Ahmed",
     category: "NFPA 70E",
     replies: 5,
-    time: "৪ ঘন্টা আগে",
+    time: "4 hours ago",
   },
   {
-    title: "স্প্রিংকলার সিস্টেমের ওয়াটার প্রেশার কত হওয়া দরকার?",
-    author: "মাহফুজা আক্তার",
+    title: "What water pressure is needed for sprinkler system?",
+    author: "Mahfuza Akter",
     category: "RSC Fire",
     replies: 12,
-    time: "৬ ঘন্টা আগে",
+    time: "6 hours ago",
   },
   {
-    title: "১০০ এইচপি মোটরের জন্য ক্যাবল সাইজ কত হবে?",
-    author: "কামাল হোসেন",
-    category: "সাধারণ ইলেকট্রিক্যাল",
+    title: "What cable size for 100 HP motor?",
+    author: "Kamal Hossain",
+    category: "General Electrical",
     replies: 15,
-    time: "৮ ঘন্টা আগে",
+    time: "8 hours ago",
   },
 ];
 
@@ -90,12 +90,12 @@ export default function ForumPage() {
       <div className="container-main">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="badge-bnbc mb-4 inline-block">কমিউনিটি</span>
+          <span className="badge-bnbc mb-4 inline-block">Community</span>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-800 font-bn mb-4">
-            ইলেকট্রিক্যাল ইঞ্জিনিয়ার ফোরাম
+            Electrical Engineer Forum
           </h1>
           <p className="text-slate-600 font-bn max-w-2xl mx-auto">
-            প্রশ্ন করুন, উত্তর দিন, এবং অন্য ইঞ্জিনিয়ারদের সাথে জ্ঞান শেয়ার করুন।
+            Ask questions, share answers, and exchange knowledge with other engineers.
           </p>
         </div>
 
@@ -103,22 +103,22 @@ export default function ForumPage() {
         <div className="grid grid-cols-3 gap-4 max-w-md mx-auto mb-12">
           <div className="text-center">
             <p className="text-2xl font-bold text-brand-blue font-en">142</p>
-            <p className="text-sm text-slate-500 font-bn">থ্রেড</p>
+            <p className="text-sm text-slate-500 font-bn">Threads</p>
           </div>
           <div className="text-center">
             <p className="text-2xl font-bold text-brand-green font-en">507</p>
-            <p className="text-sm text-slate-500 font-bn">পোস্ট</p>
+            <p className="text-sm text-slate-500 font-bn">Posts</p>
           </div>
           <div className="text-center">
             <p className="text-2xl font-bold text-brand-gold font-en">89</p>
-            <p className="text-sm text-slate-500 font-bn">সদস্য</p>
+            <p className="text-sm text-slate-500 font-bn">Members</p>
           </div>
         </div>
 
         {/* Categories */}
         <div className="mb-12">
           <h2 className="text-xl font-bold text-slate-800 font-bn mb-6">
-            ক্যাটাগরি
+            Categories
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {categories.map((cat) => (
@@ -138,8 +138,8 @@ export default function ForumPage() {
                     {cat.description}
                   </p>
                   <div className="flex items-center gap-3 text-xs text-slate-400">
-                    <span className="font-bn">{cat.threads} থ্রেড</span>
-                    <span className="font-bn">{cat.posts} পোস্ট</span>
+                    <span className="font-bn">{cat.threads} threads</span>
+                    <span className="font-bn">{cat.posts} posts</span>
                   </div>
                 </div>
               </Link>
@@ -152,7 +152,7 @@ export default function ForumPage() {
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-slate-800 font-bn flex items-center gap-2">
               <TrendingUp className="h-5 w-5 text-brand-blue" />
-              সাম্প্রতিক আলোচনা
+              Recent Discussions
             </h2>
           </div>
           <div className="space-y-3">

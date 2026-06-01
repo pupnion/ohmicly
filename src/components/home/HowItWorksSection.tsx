@@ -2,24 +2,24 @@ import { Search, Download, CheckCircle } from "lucide-react";
 
 const steps = [
   {
-    number: "১",
+    number: "1",
     icon: Search,
-    title: "টুলটি খুঁজুন",
-    desc: "Search থেকে বা category থেকে tool খুঁজুন।",
+    title: "Find the Tool",
+    desc: "Search or browse by category to find the tool you need.",
     color: "bg-brand-blue",
   },
   {
-    number: "২",
+    number: "2",
     icon: Download,
-    title: "ডাউনলোড করুন",
-    desc: "একটা click-এ Excel বা PDF download।",
+    title: "Download",
+    desc: "One-click Excel or PDF download.",
     color: "bg-brand-green",
   },
   {
-    number: "৩",
+    number: "3",
     icon: CheckCircle,
-    title: "Audit-এ ব্যবহার করুন",
-    desc: "RSC/NIRAPON auditor-কে দেখান।",
+    title: "Use in Audit",
+    desc: "Show it to RSC/NIRAPON auditor.",
     color: "bg-brand-gold",
   },
 ];
@@ -30,7 +30,7 @@ export default function HowItWorksSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-navy font-bn">
-            কিভাবে কাজ করে?
+            How It Works
           </h2>
         </div>
 

@@ -3,58 +3,58 @@ import Link from "next/link";
 import { BookOpen, Shield, FileText, Flame, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "ইলেকট্রিক্যাল স্ট্যান্ডার্ড — BNBC 2020, NFPA 70E, RSC | OhmiclyLearn",
+  title: "Electrical Standards — BNBC 2020, NFPA 70E, RSC | OhmiclyLearn",
   description:
-    "BNBC 2020, NFPA 70E, RSC Fire Manual — বাংলাদেশের ইলেকট্রিক্যাল ইঞ্জিনিয়ারদের জন্য সম্পূর্ণ গাইড।",
+    "BNBC 2020, NFPA 70E, RSC Fire Manual — complete guide for electrical engineers in Bangladesh.",
 };
 
 const standards = [
   {
     title: "BNBC 2020",
-    subtitle: "বাংলাদেশ জাতীয় ভবন নির্মাণ সংহিতা",
+    subtitle: "Bangladesh National Building Code",
     description:
-      "ইলেকট্রিক্যাল ইনস্টলেশন, আর্থিং, লাইটনিং প্রোটেকশন সিস্টেম (LPS), এবং ফায়ার সেফটির জন্য বাধ্যতামূলক স্ট্যান্ডার্ড।",
+      "Mandatory standard for electrical installation, earthing, lightning protection system (LPS), and fire safety.",
     icon: BookOpen,
     href: "/standards/bnbc-2020",
     color: "bg-brand-blue",
     topics: [
-      "ইলেকট্রিক্যাল ইনস্টলেশন কোড",
-      "আর্থিং সিস্টেম ডিজাইন",
-      "LPS (লাইটনিং প্রোটেকশন সিস্টেম)",
-      "ফায়ার অ্যালার্ম সিস্টেম",
-      "ইমার্জেন্সি লাইটিং",
+      "Electrical Installation Code",
+      "Earthing System Design",
+      "LPS (Lightning Protection System)",
+      "Fire Alarm System",
+      "Emergency Lighting",
     ],
   },
   {
     title: "NFPA 70E",
-    subtitle: "ওয়ার্কপ্লেস ইলেকট্রিক্যাল সেফটি স্ট্যান্ডার্ড",
+    subtitle: "Workplace Electrical Safety Standard",
     description:
-      "আর্ক ফ্ল্যাশ হাজার্ড, PPE সিলেকশন, ইলেকট্রিক্যাল সেফ ওয়ার্ক প্র্যাকটিসের জন্য আন্তর্জাতিক স্ট্যান্ডার্ড।",
+      "International standard for arc flash hazard, PPE selection, and electrical safe work practices.",
     icon: Shield,
     href: "/standards/nfpa-70e",
     color: "bg-brand-gold",
     topics: [
-      "আর্ক ফ্ল্যাশ হাজার্ড অ্যানালাইসিস",
-      "PPE ক্যাটাগরি সিলেকশন",
-      "লকআউট/ট্যাগআউট (LOTO)",
-      "ইলেকট্রিক্যাল সেফ ওয়ার্ক প্র্যাকটিস",
-      "বাউন্ডারি ডিস্ট্যান্স",
+      "Arc Flash Hazard Analysis",
+      "PPE Category Selection",
+      "Lockout/Tagout (LOTO)",
+      "Electrical Safe Work Practices",
+      "Boundary Distance",
     ],
   },
   {
     title: "RSC Fire Manual",
-    subtitle: "রেডিমেড গার্মেন্টস ফায়ার সেফটি ম্যানুয়াল",
+    subtitle: "Ready Made Garments Fire Safety Manual",
     description:
-      "RMG ফ্যাক্টরির জন্য ফায়ার সেফটি কমপ্লায়েন্স, ফায়ার ডিটেকশন, স্প্রিংকলার সিস্টেম এবং ইভ্যাকুয়েশন প্ল্যান।",
+      "Fire safety compliance, fire detection, sprinkler system, and evacuation plan for RMG factories.",
     icon: Flame,
     href: "/standards/rsc-fire",
     color: "bg-brand-red",
     topics: [
-      "ফায়ার ডিটেকশন সিস্টেম",
-      "স্প্রিংকলার সিস্টেম ডিজাইন",
-      "ইভ্যাকুয়েশন প্ল্যান",
-      "ফায়ার এক্সটিংগুইশার প্লেসমেন্ট",
-      "ইলেকট্রিক্যাল ফায়ার প্রিভেনশন",
+      "Fire Detection System",
+      "Sprinkler System Design",
+      "Evacuation Plan",
+      "Fire Extinguisher Placement",
+      "Electrical Fire Prevention",
     ],
   },
 ];
@@ -65,13 +65,13 @@ export default function StandardsPage() {
       <div className="container-main">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="badge-bnbc mb-4 inline-block">স্ট্যান্ডার্ড রেফারেন্স</span>
+          <span className="badge-bnbc mb-4 inline-block">Standard Reference</span>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-800 font-bn mb-4">
-            ইলেকট্রিক্যাল স্ট্যান্ডার্ড গাইড
+            Electrical Standards Guide
           </h1>
           <p className="text-slate-600 font-bn max-w-2xl mx-auto">
-            BNBC 2020, NFPA 70E এবং RSC Fire Manual — বাংলাদেশের RMG ফ্যাক্টরি
-            ইঞ্জিনিয়ারদের জন্য সম্পূর্ণ রেফারেন্স গাইড।
+            BNBC 2020, NFPA 70E, and RSC Fire Manual — complete reference guide
+            for RMG factory engineers in Bangladesh.
           </p>
         </div>
 
@@ -109,7 +109,7 @@ export default function StandardsPage() {
                 ))}
               </ul>
               <div className="flex items-center gap-1 text-brand-blue text-sm font-semibold font-bn group-hover:gap-2 transition-all">
-                বিস্তারিত পড়ুন <ArrowRight className="h-4 w-4" />
+                Read More <ArrowRight className="h-4 w-4" />
               </div>
             </Link>
           ))}

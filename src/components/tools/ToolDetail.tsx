@@ -10,6 +10,11 @@ import {
   Users,
   HelpCircle,
   Star,
+  FolderOpen,
+  FileText,
+  CheckCircle2,
+  Eye,
+  Printer,
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -73,14 +78,14 @@ export default function ToolDetail({
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-brand-gray mb-8 font-bn">
           <Link href="/" className="hover:text-brand-blue transition-colors">
-            হোম
+            Home
           </Link>
           <ChevronRight className="h-4 w-4" />
           <Link
             href="/tools"
             className="hover:text-brand-blue transition-colors"
           >
-            টুলস
+            Tools
           </Link>
           <ChevronRight className="h-4 w-4" />
           <span className="text-brand-navy font-medium">{tool.title}</span>
@@ -105,12 +110,12 @@ export default function ToolDetail({
                     {tool.isPopular && (
                       <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full bg-brand-gold/10 text-brand-gold font-bn">
                         <Star className="h-3 w-3" />
-                        সবচেয়ে জনপ্রিয়
+                        Most Popular
                       </span>
                     )}
                     {tool.isFree && (
                       <span className="text-xs font-medium px-2 py-1 rounded-full bg-brand-green/10 text-brand-green font-bn">
-                        ফ্রি
+                        Free
                       </span>
                     )}
                     <span className="text-xs font-medium px-2 py-1 rounded-full bg-gray-100 text-brand-gray font-en">
@@ -147,7 +152,7 @@ export default function ToolDetail({
                 <span className="font-semibold text-brand-navy">
                   {new Intl.NumberFormat("en-US").format(tool.downloads)}
                 </span>{" "}
-                বার ডাউনলোড হয়েছে
+                downloads
               </p>
             </div>
 
@@ -166,11 +171,11 @@ export default function ToolDetail({
                   {tool.type}
                 </p>
                 <p className="text-xs text-brand-gray font-bn mb-5">
-                  সম্পূর্ণ ফ্রি — Registration ছাড়াই
+                  Completely Free — No Registration Required
                 </p>
                 <button className="w-full inline-flex items-center justify-center gap-2 bg-brand-navy text-white font-semibold px-6 py-3.5 rounded-lg hover:bg-brand-navy/90 transition-colors font-bn">
                   <Download className="h-5 w-5" />
-                  ডাউনলোড করুন
+                  Download
                 </button>
               </div>
             </div>
@@ -178,30 +183,91 @@ export default function ToolDetail({
         </div>
 
         {/* Middle Section: How to Use */}
-        <div className="bg-white rounded-2xl border border-gray-100 p-6 md:p-10 mb-8">
-          <h2 className="text-xl font-bold text-brand-navy font-bn mb-6">
-            কিভাবে ব্যবহার করবেন
-          </h2>
-          <div className="space-y-4">
-            {tool.howToUse.map((step, i) => (
-              <div key={i} className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center flex-shrink-0 text-sm font-bold font-bn">
-                  {i + 1}
-                </div>
-                <p className="text-brand-gray font-bn text-sm leading-relaxed pt-1">
-                  {step}
+        <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden mb-8">
+          {/* Header */}
+          <div className="bg-gradient-to-r from-brand-navy to-slate-800 px-6 md:px-10 py-6">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+                <FileText className="h-5 w-5 text-brand-gold" />
+              </div>
+              <div>
+                <h2 className="text-xl font-bold text-white">
+                  How to Use
+                </h2>
+                <p className="text-white/50 text-xs mt-0.5">
+                  Follow these simple steps to get started
                 </p>
               </div>
-            ))}
+            </div>
           </div>
 
-          {/* Screenshot Placeholder */}
-          <div className="mt-8 bg-gray-100 rounded-xl h-64 flex items-center justify-center border-2 border-dashed border-gray-300">
-            <div className="text-center">
-              <FileSpreadsheet className="h-10 w-10 text-brand-gray/40 mx-auto mb-2" />
-              <p className="text-brand-gray/50 font-bn text-sm">
-                টুলের Screenshot এখানে দেখানো হবে
-              </p>
+          {/* Steps */}
+          <div className="p-6 md:p-10">
+            <div className="grid gap-0">
+              {tool.howToUse.map((step, i) => {
+                const stepIcons = [FolderOpen, FileText, Eye, CheckCircle2, Printer];
+                const StepIcon = stepIcons[i % stepIcons.length];
+                const isLast = i === tool.howToUse.length - 1;
+
+                return (
+                  <div key={i} className="relative flex gap-5">
+                    {/* Timeline Line */}
+                    <div className="flex flex-col items-center">
+                      <div className="relative z-10 w-11 h-11 rounded-xl bg-gradient-to-br from-brand-navy to-slate-700 flex items-center justify-center flex-shrink-0 shadow-md shadow-brand-navy/20">
+                        <StepIcon className="h-5 w-5 text-brand-gold" />
+                      </div>
+                      {!isLast && (
+                        <div className="w-0.5 h-full bg-gradient-to-b from-brand-navy/20 to-transparent min-h-[24px]" />
+                      )}
+                    </div>
+
+                    {/* Content */}
+                    <div className={cn("pb-6", isLast && "pb-0")}>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-[10px] font-bold tracking-widest uppercase text-brand-blue">
+                          Step {i + 1}
+                        </span>
+                      </div>
+                      <p className="text-brand-navy font-medium text-sm leading-relaxed">
+                        {step}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Preview Area */}
+            <div className="mt-8 relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-brand-navy/10 via-brand-blue/10 to-brand-gold/10 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative bg-gradient-to-br from-slate-50 to-gray-100 rounded-xl border border-gray-200 overflow-hidden">
+                {/* Mock Window Bar */}
+                <div className="flex items-center gap-2 px-4 py-3 bg-white border-b border-gray-200">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
+                  </div>
+                  <div className="flex-1 mx-4">
+                    <div className="bg-gray-100 rounded-md px-3 py-1 text-[10px] text-gray-400 text-center font-mono">
+                      {tool.title_en?.toLowerCase().replace(/\s+/g, "-")}.xlsx
+                    </div>
+                  </div>
+                  <FileSpreadsheet className="h-4 w-4 text-emerald-500" />
+                </div>
+                {/* Placeholder Content */}
+                <div className="px-6 py-12 text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center mx-auto mb-4 border border-gray-200">
+                    <FileSpreadsheet className="h-8 w-8 text-emerald-500" />
+                  </div>
+                  <p className="text-sm font-medium text-brand-navy mb-1">
+                    Tool Preview
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    Screenshot will be shown here
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -210,7 +276,7 @@ export default function ToolDetail({
         <div className="bg-white rounded-2xl border border-gray-100 p-6 md:p-10 mb-8">
           <h2 className="text-xl font-bold text-brand-navy font-bn mb-6 flex items-center gap-2">
             <Users className="h-5 w-5 text-brand-blue" />
-            কাদের জন্য দরকার
+            Who Needs This
           </h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {tool.audience.map((person, i) => (
@@ -231,7 +297,7 @@ export default function ToolDetail({
         <div className="bg-white rounded-2xl border border-gray-100 p-6 md:p-10 mb-8">
           <h2 className="text-xl font-bold text-brand-navy font-bn mb-6 flex items-center gap-2">
             <HelpCircle className="h-5 w-5 text-brand-gold" />
-            সচরাচর জিজ্ঞাসা
+            Frequently Asked Questions
           </h2>
           <div className="space-y-3">
             {tool.faqs.map((faq, i) => (
@@ -250,7 +316,7 @@ export default function ToolDetail({
         {related.length > 0 && (
           <div>
             <h2 className="text-xl font-bold text-brand-navy font-bn mb-6">
-              সম্পর্কিত টুলস
+              Related Tools
             </h2>
             <div className="grid sm:grid-cols-3 gap-6">
               {related.map((rt) => {
