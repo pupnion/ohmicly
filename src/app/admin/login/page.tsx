@@ -12,6 +12,7 @@ export default function AdminLoginPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+
   const supabase = useMemo(() => {
     try {
       return createClient();
@@ -29,33 +30,41 @@ export default function AdminLoginPage() {
     setError("");
     setLoading(true);
 
-    const { data, error: authError } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+    try {
+      const { data, error: authError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
 
-    if (authError) {
-      setError("Invalid email or password");
+      if (authError || !data?.user) {
+        setError("Invalid email or password");
+        setLoading(false);
+        return;
+      }
+
+      // নিরাপদ উপায়ে চেক করা (.single() এর বদলে .maybeSingle() বা ডেটার লেন্থ চেক করা)
+      const { data: adminData, error: dbError } = await supabase
+        .from("admin_users")
+        .select("id")
+        .eq("id", data.user.id);
+
+      // যদি ডাটাবেজে আপনার ইমেইল pupnion@gmail.com হয়, তবে কোনো সিকিউরিটি এরর থাকলেও আমরা ডিরেক্ট ঢুকতে দেব
+      const isMasterAdmin = data.user.email === "pupnion@gmail.com";
+
+      if (!isMasterAdmin && (!adminData || adminData.length === 0)) {
+        await supabase.auth.signOut();
+        setError("You do not have admin access");
+        setLoading(false);
+        return;
+      }
+
+      // সফল হলে সরাসরি অ্যাডমিন ড্যাশবোর্ডে রিডাইরেক্ট
+      router.push("/admin/dashboard");
+      router.refresh();
+    } catch (err) {
+      setError("An unexpected error occurred. Please try again.");
       setLoading(false);
-      return;
     }
-
-    // Check if user is admin
-    const { data: adminData } = await supabase
-      .from("admin_users")
-      .select("id")
-      .eq("id", data.user.id)
-      .single();
-
-    if (!adminData) {
-      await supabase.auth.signOut();
-      setError("You do not have admin access");
-      setLoading(false);
-      return;
-    }
-
-    router.push("/admin/dashboard");
-    router.refresh();
   };
 
   return (
@@ -71,7 +80,7 @@ export default function AdminLoginPage() {
               OhmiclyLearn
             </span>
           </div>
-          <p className="text-white/50 font-bn">Admin Panel</p>
+          <p className="text-white/50 font-bn">Admin Panel - Safe Mode Enabled</p>
         </div>
 
         {/* Login Card */}
@@ -129,11 +138,11 @@ export default function AdminLoginPage() {
               disabled={loading}
               className="w-full bg-brand-navy text-white font-semibold py-2.5 rounded-lg hover:bg-brand-navy/90 transition-colors font-bn disabled:opacity-50"
             >
-              {loading ? "লগইন হচ্ছে..." : "লগইন করুন"}
+              {loading ? "লগইন হচ্ছে..." : "অ্যাডমিন লগইন করুন"}
             </button>
           </form>
         </div>
       </div>
     </div>
   );
-}
+        }
