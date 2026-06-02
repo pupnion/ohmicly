@@ -58,6 +58,12 @@ export async function middleware(request: NextRequest) {
 
     // For admin routes, check if user exists in admin_users table
     if (isAdminRoute) {
+      
+      // 🚀 সাদ্দাম ভাই, আপনার এই ইমেইলটি ম্যাচ করলে ডাটাবেজ বা ক্যাশের ঝামেলা ছাড়াই সরাসরি ড্যাশবোর্ডে পাস দিয়ে দেওয়া হবে।
+      if (user.email === 'saddam.e220@gmail.com') {
+        return supabaseResponse;
+      }
+
       const { data: adminData } = await supabase
         .from("admin_users")
         .select("id")
