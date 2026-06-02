@@ -42,14 +42,13 @@ export default function AdminLoginPage() {
         return;
       }
 
-      // নিরাপদ উপায়ে চেক করা (.single() এর বদলে .maybeSingle() বা ডেটার লেন্থ চেক করা)
-      const { data: adminData, error: dbError } = await supabase
+      const { data: adminData } = await supabase
         .from("admin_users")
         .select("id")
         .eq("id", data.user.id);
 
-      // যদি ডাটাবেজে আপনার ইমেইল pupnion@gmail.com হয়, তবে কোনো সিকিউরিটি এরর থাকলেও আমরা ডিরেক্ট ঢুকতে দেব
-      const isMasterAdmin = data.user.email === "pupnion@gmail.com";
+      // আপনার ইমেইল দিয়ে মাস্টার অ্যাডমিন বাইপাস
+      const isMasterAdmin = data.user.email === "saddam.e220@gmail.com";
 
       if (!isMasterAdmin && (!adminData || adminData.length === 0)) {
         await supabase.auth.signOut();
@@ -58,8 +57,8 @@ export default function AdminLoginPage() {
         return;
       }
 
-      // সফল হলে সরাসরি অ্যাডমিন ড্যাশবোর্ডে রিডাইরেক্ট
-      router.push("/admin/dashboard");
+      // মেইন অ্যাডমিন রুটে রিডাইরেক্ট
+      router.push("/admin");
       router.refresh();
     } catch (err) {
       setError("An unexpected error occurred. Please try again.");
@@ -70,20 +69,16 @@ export default function AdminLoginPage() {
   return (
     <div className="min-h-screen bg-brand-navy flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        {/* Logo */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="bg-brand-gold rounded-lg p-2">
               <Zap className="h-6 w-6 text-brand-navy" />
             </div>
-            <span className="text-white font-bold text-2xl font-bn">
-              OhmiclyLearn
-            </span>
+            <span className="text-white font-bold text-2xl font-bn">Ohmicly</span>
           </div>
-          <p className="text-white/50 font-bn">Admin Panel - Safe Mode Enabled</p>
+          <p className="text-white/50 font-bn">Admin Panel - Access Confirmed</p>
         </div>
 
-        {/* Login Card */}
         <div className="bg-white rounded-xl shadow-xl p-8">
           <form onSubmit={handleLogin} className="space-y-5">
             {error && (
@@ -93,23 +88,19 @@ export default function AdminLoginPage() {
             )}
 
             <div>
-              <label className="block text-sm font-medium text-slate-700 font-bn mb-1.5">
-                Email
-              </label>
+              <label className="block text-sm font-medium text-slate-700 font-bn mb-1.5">Email</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@ohmiclylearn.com"
+                placeholder="admin@ohmicly.com"
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue text-sm"
+                className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none text-sm"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-slate-700 font-bn mb-1.5">
-                Password
-              </label>
+              <label className="block text-sm font-medium text-slate-700 font-bn mb-1.5">Password</label>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
@@ -117,18 +108,14 @@ export default function AdminLoginPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter password"
                   required
-                  className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue text-sm pr-10"
+                  className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none text-sm pr-10"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
                 >
-                  {showPassword ? (
-                    <EyeOff className="h-4 w-4" />
-                  ) : (
-                    <Eye className="h-4 w-4" />
-                  )}
+                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
               </div>
             </div>
@@ -145,4 +132,4 @@ export default function AdminLoginPage() {
       </div>
     </div>
   );
-        }
+}
